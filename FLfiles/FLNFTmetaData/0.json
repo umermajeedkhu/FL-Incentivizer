@@ -1,0 +1,19 @@
+{
+    "name":"FLNFT #1",
+    "description":"FLNFT is NFT for FLT",
+    "Details":{
+        "Task Guidelines":"https://ipfs.io/ipfs/QmYXE9E7qtLGpbwftoGZVf54bgzzkVkowwGESxoEA9efyp/taskguidelines.md",
+        "Local Model Submission Guidelines":"https://ipfs.io/ipfs/QmYXE9E7qtLGpbwftoGZVf54bgzzkVkowwGESxoEA9efyp/LMSG.md",
+        "Local Model Reward Criteria": "https://ipfs.io/ipfs/QmYXE9E7qtLGpbwftoGZVf54bgzzkVkowwGESxoEA9efyp/LMRC.md",
+        "Error Codes": "https://ipfs.io/ipfs/QmYXE9E7qtLGpbwftoGZVf54bgzzkVkowwGESxoEA9efyp/errorcodes.md"
+    },
+    "image":"https://ipfs.io/ipfs/QmZJ8aJ5Hy2gUn9rCkTXoYba8xh44wAxsqrqwDdKPwhTjL/0.jpg",
+    "FLTPC_etherscan" : "https://rinkeby.etherscan.io/address/0xdC63FB6f6a11c358D06Cf05A1049eC04cf1e5bc1",
+    "FLTC_etherscan" : "https://rinkeby.etherscan.io/address/0x69CE87aF870EBeFdC7DD1099eC9eA5bC4F86208E",
+    "FLNFTC_etherscan" : "https://rinkeby.etherscan.io/address/0x620Ef4E1cDE7f1841538279E6baf1d1b96f6e6c4",
+    "GMipfsHash": "QmT6BBUnEsd84HFqGFNZWQtQdWkjL449pJjBtPHezLN4kj",
+    "GMipfsHashFull": "https://ipfs.io/ipfs/QmT6BBUnEsd84HFqGFNZWQtQdWkjL449pJjBtPHezLN4kj",
+    "GI": 0,
+    "Accuracy": 0.1618,
+    "GMfilename": "dC63FB6f6a11c358D06Cf05A1049eC04cf1e5bc1_GM_0.pkl"
+}
