@@ -8,13 +8,15 @@ import "@openzeppelin/contracts/token/ERC20/ERC20.sol";
 import "@openzeppelin/contracts/security/Pausable.sol";
 
 
+
+
 contract FLTC is ERC20, Ownable, Pausable{
 
     // owner of FLTokenContract should be FLtaskPublisherContract
     constructor(string memory _name, string memory _symbol) ERC20(_name, _symbol) {
         
     }
-
+    
 
     function mintFLToken(address recipient)public whenNotPaused onlyOwner returns(bool){
         _mint(recipient, 1 * 10 ** 18); 

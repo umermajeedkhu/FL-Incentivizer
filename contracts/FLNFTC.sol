@@ -64,8 +64,8 @@ contract FLNFTC is ERC721Enumerable, Ownable, Pausable {
         address from,
         address to,
         uint256 tokenId
-    ) internal virtual override {
-        super._beforeTokenTransfer(from, to, tokenId);
+    ) internal virtual  {
+        super._beforeTokenTransfer(from, to, tokenId,1);
 
         require(!paused(), "ERC721Pausable: token can not transfer while paused");
     }
@@ -135,7 +135,8 @@ contract FLNFTC is ERC721Enumerable, Ownable, Pausable {
         FLTPCAddresses[_tokenId] = _FLTPCAddress;
         GMipfsHashes[_tokenId] = _GMipfsHash;
         tokenURIs[_tokenId] = _tokenURI;
-
+        emit GMipfsHashset( _tokenId,  _GMipfsHash);
+        emit TokenURIset( _tokenId,  _tokenURI);
         return _tokenId;
 
     }

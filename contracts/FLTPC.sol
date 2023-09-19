@@ -46,8 +46,8 @@ contract FLTPC is Ownable, Pausable{
     mapping (uint => bool) public GIC;
     mapping (uint => bool) public LMSC; // LMSs completed for this global iteration
     mapping (uint => bool) public LMSADRC; // LMSs Approval Disarroval completed for this global iteration
-    event LMSstarted(uint GI); // Where GI is the global iteration for which local model submission has been started
-    event LMSclosed(uint GI); // Where GI is the global iteration for which local model submission has been ended
+    event LMSstarted(uint indexed GI); // Where GI is the global iteration for which local model submission has been started
+    event LMSclosed(uint indexed GI); // Where GI is the global iteration for which local model submission has been ended
 
 
     constructor (address payable _FLNFTCAddr) {
@@ -115,6 +115,7 @@ contract FLTPC is Ownable, Pausable{
         GMipfsHash = _GMipfsHash;
         _unpause();
     }
+    event LMSubmitted(uint indexed gi, string indexed _LMipfsHash, string indexed _LMURI);
 
     function submitLocalModel(string memory _LMipfsHash, string memory _LMURI, uint _GI) public  whenLMSAccepting {
         
@@ -123,6 +124,7 @@ contract FLTPC is Ownable, Pausable{
             Add_LMS( _LMipfsHash,  _LMURI, msg.sender);
             LMipfsHashes[_LMipfsHash] = true;
             LMURIs[_LMipfsHash] = true;
+            emit LMSubmitted(_GI,_LMipfsHash,_LMURI);
         }
     }
 
@@ -151,6 +153,7 @@ contract FLTPC is Ownable, Pausable{
         return (LMSs[_GI][LM_Submitter].LMipfsHash,LMSs[_GI][LM_Submitter].LMURI,LMSs[_GI][LM_Submitter].lmstatus);
     }
 
+
     function ADRLMS( address _LMsubmitter, uint _GI, LMstatus _localModelStatus) public onlyOwner whenLMSNotAccepting returns(bool){
         require(_GI==GI+1,"LMADR GI X"); 
         require(LMSs[_GI][_LMsubmitter].lmstatus==LMstatus.Submitted,'LMSX');
@@ -173,8 +176,8 @@ contract FLTPC is Ownable, Pausable{
 
     }
 
-    event GMupdated(uint gi, string _GMipfsHash, string _tokenURI);
-
+    event GMupdated(uint indexed gi, string indexed _GMipfsHash, string indexed _tokenURI);
+    
     function GMupdate( uint _GI, string memory _tokenURI, string memory _GMipfsHash) public onlyOwner  whenLMSNotAccepting returns(bool){
         require(!GIC[_GI],"GM GI Y"); // GM for this iteration already avaiable!
         require(_GI==GI+1,"GI IC"); // incorrect GI update!

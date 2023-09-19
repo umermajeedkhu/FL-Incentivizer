@@ -24,7 +24,7 @@ task("accounts", "Prints the list of accounts", async (taskArgs, hre) => {
 
 import {
   YOUR_ETHERSCAN_API_KEY,
-  RINKEBY_URL,
+  sepolia_URL,
   ROPSTEN_URL,
   RINKEBY_PRIVATE_KEY_0,
   RINKEBY_PRIVATE_KEY_1,
@@ -48,8 +48,8 @@ const config: HardhatUserConfig = {
     hardhat: {
       chainId: 1337                
     },
-    rinkeby: {
-      url: RINKEBY_URL,
+    sepolia: {
+      url: sepolia_URL,
       accounts: [RINKEBY_PRIVATE_KEY_0,RINKEBY_PRIVATE_KEY_1,RINKEBY_PRIVATE_KEY_2,RINKEBY_PRIVATE_KEY_3,RINKEBY_PRIVATE_KEY_4,RINKEBY_PRIVATE_KEY_5,RINKEBY_PRIVATE_KEY_6,RINKEBY_PRIVATE_KEY_7,RINKEBY_PRIVATE_KEY_8,RINKEBY_PRIVATE_KEY_9,RINKEBY_PRIVATE_KEY_10,RINKEBY_PRIVATE_KEY_11],
     },
     ropsten: {
@@ -62,7 +62,7 @@ const config: HardhatUserConfig = {
     currency: "USD",
   },
   etherscan: {
-    apiKey: process.env.YOUR_ETHERSCAN_API_KEY,
+    apiKey: YOUR_ETHERSCAN_API_KEY,
   },
 };
 
