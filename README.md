@@ -1,4 +1,5 @@
 # Important Update !!! on our published IEEE Access outdated information (Ethereum Merge)
+Our Paper [“FL-Incentivizer: FL-NFT and FL-Tokens for Federated Learning Model Trading and Training,”](https://ieeexplore.ieee.org/document/10012365) IEEE Access, Jan 2023 has got an update.
 After the Ethereum Merge, Rinkeby and Ropsten test networks have been deprecated. As a result, we have migrated our FL-Incentivizer to the Sepolia test network. Previously, our FL-Incentivizer was deployed on Rinkeby and Ropsten, as mentioned in our published IEEE Access journal. However, to align with the current developments, we have updated and deployed the FL-Incentivizer on the Sepolia test network. This change ensures that our application remains compatible with the evolving Ethereum ecosystem. Please refer to the updated information in this section of the README file for the most recent deployment details.
 
 
